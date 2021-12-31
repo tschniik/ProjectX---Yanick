@@ -14,10 +14,3 @@ public class WebConfig implements WebMvcConfigurer {
         registry.addMapping("/**").allowedOrigins("*").allowedMethods("*");
     }
 }
-© 2021 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Docs
-Contact 

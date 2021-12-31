@@ -1,4 +1,4 @@
-package ch.zhaw.ecotracker;
+package ch.zhaw.projectX;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
