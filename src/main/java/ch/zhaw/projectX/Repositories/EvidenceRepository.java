@@ -7,3 +7,5 @@ import ch.zhaw.projectX.Entities.Evidence;
 public interface EvidenceRepository extends JpaRepository<Evidence, Integer>{
 
 }
+
+// Fehlt noch zweiter Teil
