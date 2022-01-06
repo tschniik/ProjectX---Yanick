@@ -1,4 +1,4 @@
-package ch.zhaw.projectX.Entities;
+package ch.zhaw.projectX.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,12 +10,14 @@ public class Crime {
 
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	public int id;
-	public String crimeSceneStreet;
-	public String crimeSceneNumber;
+	public String crimeName;
+	public String crimeWeapon;
+	public String crimeSceneStreetName;
+	public String crimeSceneStreetNumber;
 	public String crimeSceneZip;
 	public String crimeScenePlace;
-	public String crimeWeapon;
-	public String crimeName;
+
+
 	
 	
 	public Crime(){
@@ -23,12 +25,12 @@ public class Crime {
 	}
 	
 	
-	public Crime(int id, String crimeSceneStreet, String crimeSceneNumber, String crimeSceneZip, String crimeScenePlace,
+	public Crime(int id, String crimeSceneStreetName, String crimeSceneStreetNumber, String crimeSceneZip, String crimeScenePlace,
 			String crimeWeapon, String crimeName) {
 		super();
 		this.id = id;
-		this.crimeSceneStreet = crimeSceneStreet;
-		this.crimeSceneNumber = crimeSceneNumber;
+		this.crimeSceneStreetName = crimeSceneStreetName;
+		this.crimeSceneStreetNumber = crimeSceneStreetNumber;
 		this.crimeSceneZip = crimeSceneZip;
 		this.crimeScenePlace = crimeScenePlace;
 		this.crimeWeapon = crimeWeapon;
@@ -56,16 +58,16 @@ public class Crime {
 		this.crimeName = crimeName;
 	}
 	public String getCrimeSceneStreet() {
-		return crimeSceneStreet;
+		return crimeSceneStreetName;
 	}
 	public void setCrimeSceneStreet(String crimeSceneStreet) {
-		this.crimeSceneStreet = crimeSceneStreet;
+		this.crimeSceneStreetName = crimeSceneStreet;
 	}
 	public String getCrimeSceneNumber() {
-		return crimeSceneNumber;
+		return crimeSceneStreetNumber;
 	}
 	public void setCrimeSceneNumber(String crimeSceneNumber) {
-		this.crimeSceneNumber = crimeSceneNumber;
+		this.crimeSceneStreetNumber = crimeSceneNumber;
 	}
 	public String getCrimeSceneZip() {
 		return crimeSceneZip;

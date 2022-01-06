@@ -1,4 +1,4 @@
-package ch.zhaw.projectX.Entities;
+package ch.zhaw.projectX.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

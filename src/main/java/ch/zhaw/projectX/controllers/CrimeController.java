@@ -1,4 +1,4 @@
-package ch.zhaw.projectX.Controllers;
+package ch.zhaw.projectX.controllers;
 
 import java.util.List;
 
@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import ch.zhaw.projectX.Entities.Crime;
-import ch.zhaw.projectX.Repositories.CrimeRepository;
+import ch.zhaw.projectX.entities.Crime;
+import ch.zhaw.projectX.repositories.CrimeRepository;
 
 @RestController
 public class CrimeController {
@@ -48,15 +48,15 @@ public class CrimeController {
 	}
 	
 	@PutMapping("/crime/crime-details/{id}")
-	public ResponseEntity<Crime> update(@PathVariable("id") int id){
+	public ResponseEntity<Crime> update(@PathVariable("id") int id, Crime newEntity){ // Allenfalls neuen Entitätstyp anotieren
 		  if (this.repository.existsById(id)) {
-	            this.repository.save();
+	            this.repository.save(newEntity); 
 	            	return new ResponseEntity<> (HttpStatus.OK);
 	        } else {
 	            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 	        }
 		  }
-		  //Wie/wo erhalte ich den Wert, welchen ich dann speichern mit save() muss?
+
 		  
 	@DeleteMapping("/crime/crime-details/{id}")
 		public ResponseEntity<Crime> delete(@PathVariable("id") int id){
