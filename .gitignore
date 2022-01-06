@@ -13,5 +13,3 @@ buildNumber.properties
 .settings
 .classpath
 .project
-.jpb
-.mvn/wrapper
