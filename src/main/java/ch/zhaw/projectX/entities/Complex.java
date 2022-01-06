@@ -22,8 +22,14 @@ public class Complex {
 	private Complex() {
 		
 	}
-	
-	
+
+	public Complex(int id, String dNAFound, List<Evidence> evidence) {
+		super();
+		this.id = id;
+		this.DNAFound  = dNAFound;
+		this.evidence = evidence;
+	}
+
 	public int getId() {
 		return id;
 	}
@@ -39,6 +45,16 @@ public class Complex {
 	public void setDNAFound(String dNAFound) {
 		DNAFound = dNAFound;
 	}
+
+	public List<Evidence> getEvidence() {
+		return evidence;
+	}
+
+	public void setEvidence(List<Evidence> evidence) {
+		this.evidence = evidence;
+	}
+	
+	
 	
 	
 	

@@ -27,64 +27,104 @@ public class Crime {
 	public Crime(){
 		
 	}
-	
-	
-	public Crime(int id, String crimeSceneStreetName, String crimeSceneStreetNumber, String crimeSceneZip, String crimeScenePlace,
-			String crimeWeapon, String crimeName) {
+
+
+	public Crime(int id, String crimeName, String crimeWeapon, String crimeSceneStreetName,
+			String crimeSceneStreetNumber, String crimeSceneZip, String crimeScenePlace,
+			List<Investigation> investigation) {
 		super();
 		this.id = id;
+		this.crimeName = crimeName;
+		this.crimeWeapon = crimeWeapon;
 		this.crimeSceneStreetName = crimeSceneStreetName;
 		this.crimeSceneStreetNumber = crimeSceneStreetNumber;
 		this.crimeSceneZip = crimeSceneZip;
 		this.crimeScenePlace = crimeScenePlace;
-		this.crimeWeapon = crimeWeapon;
-		this.crimeName = crimeName;
+		this.investigation = investigation;
 	}
-	
-	
-	
+
+
 	public int getId() {
 		return id;
 	}
+
+
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getCrimeWeapon() {
-		return this.crimeWeapon;
-	}
-	public void setCrimeWeapon(String crimeWeapon) {
-		this.crimeWeapon = crimeWeapon;
-	}
+
+
 	public String getCrimeName() {
-		return this.crimeName;
+		return crimeName;
 	}
+
+
 	public void setCrimeName(String crimeName) {
 		this.crimeName = crimeName;
 	}
-	public String getCrimeSceneStreet() {
+
+
+	public String getCrimeWeapon() {
+		return crimeWeapon;
+	}
+
+
+	public void setCrimeWeapon(String crimeWeapon) {
+		this.crimeWeapon = crimeWeapon;
+	}
+
+
+	public String getCrimeSceneStreetName() {
 		return crimeSceneStreetName;
 	}
-	public void setCrimeSceneStreet(String crimeSceneStreet) {
-		this.crimeSceneStreetName = crimeSceneStreet;
+
+
+	public void setCrimeSceneStreetName(String crimeSceneStreetName) {
+		this.crimeSceneStreetName = crimeSceneStreetName;
 	}
-	public String getCrimeSceneNumber() {
+
+
+	public String getCrimeSceneStreetNumber() {
 		return crimeSceneStreetNumber;
 	}
-	public void setCrimeSceneNumber(String crimeSceneNumber) {
-		this.crimeSceneStreetNumber = crimeSceneNumber;
+
+
+	public void setCrimeSceneStreetNumber(String crimeSceneStreetNumber) {
+		this.crimeSceneStreetNumber = crimeSceneStreetNumber;
 	}
+
+
 	public String getCrimeSceneZip() {
 		return crimeSceneZip;
 	}
+
+
 	public void setCrimeSceneZip(String crimeSceneZip) {
 		this.crimeSceneZip = crimeSceneZip;
 	}
+
+
 	public String getCrimeScenePlace() {
 		return crimeScenePlace;
 	}
+
+
 	public void setCrimeScenePlace(String crimeScenePlace) {
 		this.crimeScenePlace = crimeScenePlace;
 	}
+
+
+	public List<Investigation> getInvestigation() {
+		return investigation;
+	}
+
+
+	public void setInvestigation(List<Investigation> investigation) {
+		this.investigation = investigation;
+	}
+	
+	
+
 
 	
 	
