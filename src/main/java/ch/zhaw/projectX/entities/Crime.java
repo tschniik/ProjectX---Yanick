@@ -1,23 +1,27 @@
 package ch.zhaw.projectX.entities;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Crime {
 
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-	public int id;
-	public String crimeName;
-	public String crimeWeapon;
-	public String crimeSceneStreetName;
-	public String crimeSceneStreetNumber;
-	public String crimeSceneZip;
-	public String crimeScenePlace;
+	private int id;
+	private String crimeName;
+	private String crimeWeapon;
+	private String crimeSceneStreetName;
+	private String crimeSceneStreetNumber;
+	private String crimeSceneZip;
+	private String crimeScenePlace;
 
-
+	@OneToMany
+	private List<Investigation> investigation;
 	
 	
 	public Crime(){

@@ -1,19 +1,27 @@
 package ch.zhaw.projectX.entities;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity 
 public class Evidence {
 	
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-	public int id;
+	private int id;
 	
-	public String EvidenceName;
+	private String EvidenceName;
 	
+	@OneToMany
+	private List<Investigation> investigation;
 	
+	@ManyToOne
+	private Complex complex;
 	
 	public Evidence() {
 		

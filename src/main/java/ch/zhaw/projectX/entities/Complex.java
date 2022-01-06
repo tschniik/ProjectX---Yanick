@@ -1,19 +1,25 @@
 package ch.zhaw.projectX.entities;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Complex {
 
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-	public int id;
+	private int id;
 	
-	public String DNAFound;
+	private String DNAFound;
+	
+	@OneToMany
+	private List <Evidence> evidence;
 
-	public Complex() {
+	private Complex() {
 		
 	}
 	

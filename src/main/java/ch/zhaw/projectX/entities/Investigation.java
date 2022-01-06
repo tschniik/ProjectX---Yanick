@@ -4,17 +4,22 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Investigation {
 	
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-	public int id;
+	private int id;
 	
-	public String CrimeCommissioner;
-	public String PoliceDepartment;
-	public Long InvestigationStart;
+	private String CrimeCommissioner;
+	private String PoliceDepartment;
+	private Long InvestigationStart;
 	
+	@ManyToOne
+	private Crime crime;
+	@ManyToOne
+	private Evidence evidence;
 	
 	public Investigation() {
 		

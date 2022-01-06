@@ -9,9 +9,9 @@ import javax.persistence.Id;
 public class Simple {
 
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-	public int id;
+	private int id;
 	
-	public String eyewitnessName;
+	private String eyewitnessName;
 
 	public Simple() {
 		
