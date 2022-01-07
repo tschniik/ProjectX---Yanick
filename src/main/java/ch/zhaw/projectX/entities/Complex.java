@@ -19,7 +19,7 @@ public class Complex {
 	private int id;
 	
 	@Column(name = "dna_found")
-	private String DNAFound;
+	private String DnaFound;
 	
 	@OneToMany
 	@JsonIgnoreProperties(value = "evidence")  //The annotation @JoinColumn indicates that this entity is the owner of the relationship (that is: the corresponding table has a column with a foreign key to the referenced table)
@@ -32,7 +32,7 @@ public class Complex {
 	public Complex(int id, String dNAFound, List<Evidence> evidence) {
 		super();
 		this.id = id;
-		this.DNAFound  = dNAFound;
+		this.DnaFound  = dNAFound;
 		this.evidence = evidence;
 	}
 
@@ -44,12 +44,12 @@ public class Complex {
 		this.id = id;
 	}
 
-	public String getDNAFound() {
-		return DNAFound;
+	public String getDnaFound() {
+		return DnaFound;
 	}
 
-	public void setDNAFound(String dNAFound) {
-		DNAFound = dNAFound;
+	public void setDnaFound(String dnaFound) {
+		DnaFound = dnaFound;
 	}
 
 	public List<Evidence> getEvidence() {
