@@ -1,5 +1,6 @@
 package ch.zhaw.projectX.entities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -7,33 +8,42 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
 public class Investigation {
 	
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id", nullable = false)
 	private int id;
 	
+	@Column(name = "Crime_commissioner")
 	private String CrimeCommissioner;
+	
+	@Column(name = "Police_department")
 	private String PoliceDepartment;
-	private Long InvestigationStart;
+	
+	   
+	@Column(name = "Investigation_start")
+	private String InvestigationStart;
 	
 	@ManyToOne
-	@JoinColumn(name = "crime_id")
+	@JoinColumn(name = "crime_id")  //The annotation @JoinColumn indicates that this entity is the owner of the relationship (that is: the corresponding table has a column with a foreign key to the referenced table)
+	@JsonIgnoreProperties(value = {"crime", "evidence"})  // @JsonIgnoreProperties is used at class level to mark a property or list of properties to be ignored. Without ignoring the properties I would receive a table evidence_investigation & evidence_crime
 	private Crime crime;
-	//The annotation @JoinColumn indicates that this entity is the owner of the relationship 
-	//(that is: the corresponding table has a column with a foreign key to the referenced table)
+
 	
 	@ManyToOne
-	@JoinColumn(name = "evidence_id")
+	@JoinColumn(name = "evidence_id")  //The annotation @JoinColumn indicates that this entity is the owner of the relationship (that is: the corresponding table has a column with a foreign key to the referenced table)
+	@JsonIgnoreProperties(value = {"crime", "evidence"})  // @JsonIgnoreProperties is used at class level to mark a property or list of properties to be ignored. Without ignoring the properties I would receive a table evidence_investigation & evidence_crime
 	private Evidence evidence;
-	//The annotation @JoinColumn indicates that this entity is the owner of the relationship 
-	//(that is: the corresponding table has a column with a foreign key to the referenced table)
+	
 	
 	public Investigation() {
 		
 	}
 
-	public Investigation(int id, String crimeCommissioner, String policeDepartment, Long investigationStart,
+	public Investigation(int id, String crimeCommissioner, String policeDepartment, String investigationStart,
 			Crime crime, Evidence evidence) {
 		super();
 		this.id = id;
@@ -68,11 +78,11 @@ public class Investigation {
 		PoliceDepartment = policeDepartment;
 	}
 
-	public Long getInvestigationStart() {
+	public String getInvestigationStart() {
 		return InvestigationStart;
 	}
 
-	public void setInvestigationStart(Long investigationStart) {
+	public void setInvestigationStart(String investigationStart) {
 		InvestigationStart = investigationStart;
 	}
 

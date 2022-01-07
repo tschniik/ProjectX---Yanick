@@ -2,21 +2,27 @@ package ch.zhaw.projectX.entities;
 
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
 public class Complex {
 
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id", nullable = false)
 	private int id;
 	
+	@Column(name = "dna_found")
 	private String DNAFound;
 	
 	@OneToMany
+	@JsonIgnoreProperties(value = "evidence")  //The annotation @JoinColumn indicates that this entity is the owner of the relationship (that is: the corresponding table has a column with a foreign key to the referenced table)
 	private List <Evidence> evidence;
 
 	private Complex() {
