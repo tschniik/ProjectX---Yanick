@@ -49,7 +49,7 @@ public class MainController<T> {// Weshalb braucht es hier Typ <T>
 	return new ResponseEntity<>(this.mainRepository.save(newEntity), HttpStatus.OK);
 	}
 	
-	
+	//Allenfalls weglassen da keine Updates im Frontend?
 	@PutMapping("{id}")
 	public ResponseEntity<T> update(@PathVariable("id") long id, T newEntity){ 
 		  if (this.mainRepository.existsById(id)) { //findById() returns object, which you are searching for, existsById() returns true/false whether or not entity exists in repository
