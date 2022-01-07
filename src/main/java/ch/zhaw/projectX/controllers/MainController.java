@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import ch.zhaw.projectX.entities.Crime;
+
 import ch.zhaw.projectX.repositories.MainRepository;
 
 @RestController			//Wo kommt Annotation @Autowired hin?
