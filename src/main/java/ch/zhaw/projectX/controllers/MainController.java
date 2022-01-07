@@ -2,6 +2,7 @@ package ch.zhaw.projectX.controllers;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -17,6 +18,8 @@ import ch.zhaw.projectX.repositories.MainRepository;
 
 @RestController			//Wo kommt Annotation @Autowired hin?
 public class MainController<T> {// Weshalb braucht es hier Typ <T>
+	
+	@Autowired
 	protected MainRepository<T> mainRepository; //Weshalb protected und nicht public/private?
 	
 	

@@ -1,5 +1,6 @@
 package ch.zhaw.projectX.controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,6 +12,7 @@ import ch.zhaw.projectX.repositories.MainRepository;
 @RequestMapping(value = "/investigation")
 public class InvestigationController extends MainController<Investigation>{
 	
+	@Autowired
 	private InvestigationRepository investigationRepository;
 
 	public InvestigationController (MainRepository<Investigation> mainRepository, InvestigationRepository investigationRepository) {
