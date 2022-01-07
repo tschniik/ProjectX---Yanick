@@ -29,13 +29,13 @@ public class Investigation {
 	
 	@ManyToOne
 	@JoinColumn(name = "crime_id")  //The annotation @JoinColumn indicates that this entity is the owner of the relationship (that is: the corresponding table has a column with a foreign key to the referenced table)
-	@JsonIgnoreProperties(value = {"crime", "evidence"})  // @JsonIgnoreProperties is used at class level to mark a property or list of properties to be ignored. Without ignoring the properties I would receive a table evidence_investigation & evidence_crime
+	// @JsonIgnoreProperties(value = {"crime", "evidence"})  // @JsonIgnoreProperties is used at class level to mark a property or list of properties to be ignored. Without ignoring the properties I would receive a table evidence_investigation & evidence_crime
 	private Crime crime;
 
 	
 	@ManyToOne
 	@JoinColumn(name = "evidence_id")  //The annotation @JoinColumn indicates that this entity is the owner of the relationship (that is: the corresponding table has a column with a foreign key to the referenced table)
-	@JsonIgnoreProperties(value = {"crime", "evidence"})  // @JsonIgnoreProperties is used at class level to mark a property or list of properties to be ignored. Without ignoring the properties I would receive a table evidence_investigation & evidence_crime
+	// @JsonIgnoreProperties(value = {"crime", "evidence"})  // @JsonIgnoreProperties is used at class level to mark a property or list of properties to be ignored. Without ignoring the properties I would receive a table evidence_investigation & evidence_crime
 	private Evidence evidence;
 	
 	

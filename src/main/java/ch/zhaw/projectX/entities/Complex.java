@@ -7,9 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
-
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 public class Complex {  //extends Evidence (if using mapped superclass)
@@ -22,7 +21,7 @@ public class Complex {  //extends Evidence (if using mapped superclass)
 	private String DnaFound;
 	
 	@OneToMany
-	@JsonIgnoreProperties(value = "evidence")  //The annotation @JoinColumn indicates that this entity is the owner of the relationship (that is: the corresponding table has a column with a foreign key to the referenced table)
+	@JoinColumn(name = "evidence_id") //The annotation @JoinColumn indicates that this entity is the owner of the relationship (that is: the corresponding table has a column with a foreign key to the referenced table)
 	private List <Evidence> evidence;
 
 	private Complex() {

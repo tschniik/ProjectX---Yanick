@@ -31,7 +31,7 @@ public class Evidence {
 	
 	@ManyToOne
 	@JoinColumn(name = "complex_id")  //The annotation @JoinColumn indicates that this entity is the owner of the relationship (that is: the corresponding table has a column with a foreign key to the referenced table)
-	@JsonIgnoreProperties(value = "complex")  // @JsonIgnoreProperties is used at class level to mark a property or list of properties to be ignored. Without ignoring the properties I would receive a table complex_evidence
+//	@JsonIgnoreProperties(value = "complex")  // @JsonIgnoreProperties is used at class level to mark a property or list of properties to be ignored. Without ignoring the properties I would receive a table complex_evidence
 	private Complex complex;
 
 	
