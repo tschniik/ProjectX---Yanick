@@ -13,10 +13,10 @@ import ch.zhaw.projectX.repositories.MainRepository;
 public class ComplexController extends MainController<Complex>{
 
 	@Autowired
-	private ComplexRepository complexRepository;
+	private ComplexRepository complexRepository; //(Private final or just private): Since private methods are inaccessible, they are implicitly final in Java. So adding final specifier to a private method doesn't add any value
 	
 	public ComplexController(ComplexRepository complexRepository, MainRepository <Complex> mainRepository) {
-		super(mainRepository);
+		super(mainRepository); //ATTENTION: Super() is always just below the constructor!
 		this.complexRepository = complexRepository;
 	}
 }

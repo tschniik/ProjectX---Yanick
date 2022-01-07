@@ -16,11 +16,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import ch.zhaw.projectX.repositories.MainRepository;
 
-@RestController			//Wo kommt Annotation @Autowired hin?
+@RestController			
 public class MainController<T> {// Weshalb braucht es hier Typ <T>
 	
-	@Autowired
-	protected MainRepository<T> mainRepository; //Weshalb protected und nicht public/private?
+	@Autowired 
+	protected MainRepository<T> mainRepository; //Protected: Methods or data declared as protected can be accessed from within the same class or subclasses of the same packages.
 	
 	
 	public MainController(MainRepository<T> mainRepository) { 
@@ -38,7 +38,7 @@ public class MainController<T> {// Weshalb braucht es hier Typ <T>
 	}
 
 	@GetMapping("/{id}")
-	public ResponseEntity<T> findById(@PathVariable("id") long id) {
+	public ResponseEntity<T> findById(@PathVariable("id") long id) {  //long id is input variable. @PathVariable states that the input variable with the name id is the one from the URL
 		if (this.mainRepository.existsById(id)) {  //findById() returns object, which you are searching for, existsById() returns true/false whether or not entity exists in repository
             	return new ResponseEntity<> (HttpStatus.OK);  
         } else {
@@ -48,7 +48,7 @@ public class MainController<T> {// Weshalb braucht es hier Typ <T>
 	
 	
 	@PostMapping
-	public ResponseEntity<T> create(@RequestBody T newEntity) {
+	public ResponseEntity<T> create(@RequestBody T newEntity) {  //@RequestBody annotation maps the HttpRequest body (only the body of the response can be saved as a new entity)
 	return new ResponseEntity<>(this.mainRepository.save(newEntity), HttpStatus.OK);
 	}
 	
