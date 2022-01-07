@@ -20,7 +20,5 @@ public class CrimeController extends MainController<Crime>{
 		this.crimeRepository = crimeRepository;
 	
 	}
-
-	
 	
 }

@@ -11,7 +11,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 
 @Entity
-public class Complex {  //extends Evidence (if using mapped superclass)
+public class Complex extends Evidence{ 
 
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id", nullable = false)
@@ -20,7 +20,6 @@ public class Complex {  //extends Evidence (if using mapped superclass)
 	@Column(name = "dna_found")
 	private String DnaFound;
 	
-	@OneToMany
 	@JoinColumn(name = "evidence_id") //The annotation @JoinColumn indicates that this entity is the owner of the relationship (that is: the corresponding table has a column with a foreign key to the referenced table)
 	private List <Evidence> evidence;
 
