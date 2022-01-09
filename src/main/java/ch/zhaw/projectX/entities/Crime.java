@@ -7,10 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 public class Crime {
@@ -36,8 +33,7 @@ public class Crime {
 	
 	@Column(name = "crime_scene_place")
 	private String crimeScenePlace;
-
-	@JoinColumn(name = "investigation_id")  //The annotation @JoinColumn indicates that this entity is the owner of the relationship (that is: the corresponding table has a column with a foreign key to the referenced table)
+	
 	private List<Investigation> investigation;
 	
 	
@@ -139,12 +135,6 @@ public class Crime {
 	public void setInvestigation(List<Investigation> investigation) {
 		this.investigation = investigation;
 	}
-	
-	
-
-
-	
-	
 
 }
 

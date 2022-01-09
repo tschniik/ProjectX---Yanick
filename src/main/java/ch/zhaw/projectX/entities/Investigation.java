@@ -8,8 +8,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
 
 @Entity
 public class Investigation {
@@ -28,12 +26,12 @@ public class Investigation {
 	@Column(name = "Investigation_start")
 	private String InvestigationStart;
 	
-	@ManyToOne
+	@ManyToOne  //One investigation of many points on crime
 	@JoinColumn(name = "crime_id")  //The annotation @JoinColumn indicates that this entity is the owner of the relationship (that is: the corresponding table has a column with a foreign key to the referenced table)
 	private Crime crime;
 
 	
-	@ManyToOne
+	@ManyToOne //One investigation of many points on evidence
 	@JoinColumn(name = "evidence_id")  //The annotation @JoinColumn indicates that this entity is the owner of the relationship (that is: the corresponding table has a column with a foreign key to the referenced table)
 	private Evidence evidence;
 	

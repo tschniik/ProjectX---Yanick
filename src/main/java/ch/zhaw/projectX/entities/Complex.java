@@ -7,8 +7,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
 
 @Entity
 public class Complex extends Evidence{ 
@@ -20,17 +18,15 @@ public class Complex extends Evidence{
 	@Column(name = "dna_found")
 	private String DnaFound;
 	
-	@JoinColumn(name = "evidence_id") //The annotation @JoinColumn indicates that this entity is the owner of the relationship (that is: the corresponding table has a column with a foreign key to the referenced table)
-	private List <Evidence> evidence;
-
-	private Complex() {
-		
+	private List<Evidence> evidence;
+	
+	public Complex() {
 	}
 
-	public Complex(int id, String dNAFound, List<Evidence> evidence) {
+	public Complex(int id, String dnaFound, List<Evidence> evidence) {
 		super();
 		this.id = id;
-		this.DnaFound  = dNAFound;
+		this.DnaFound = dnaFound;
 		this.evidence = evidence;
 	}
 
@@ -57,9 +53,6 @@ public class Complex extends Evidence{
 	public void setEvidence(List<Evidence> evidence) {
 		this.evidence = evidence;
 	}
-	
-	
-	
-	
-	
+
+		
 }

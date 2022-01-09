@@ -13,7 +13,7 @@ import ch.zhaw.projectX.repositories.MainRepository;
 public class InvestigationController extends MainController<Investigation>{
 	
 	@Autowired
-	private InvestigationRepository investigationRepository; //(Private final or just private):Since private methods are inaccessible, they are implicitly final in Java. So adding final specifier to a private method doesn't add any value
+	protected InvestigationRepository investigationRepository; //Protected: Methods or data declared as protected can be accessed from within the same class or subclasses of the same packages.
 
 	public InvestigationController (MainRepository<Investigation> mainRepository, InvestigationRepository investigationRepository) {
 		super(mainRepository); //ATTENTION: Super() is always just below the constructor!

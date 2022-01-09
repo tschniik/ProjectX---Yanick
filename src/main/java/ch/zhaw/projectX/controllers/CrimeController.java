@@ -13,9 +13,9 @@ import ch.zhaw.projectX.repositories.MainRepository;
 public class CrimeController extends MainController<Crime>{ 
 
 	@Autowired
-	private CrimeRepository crimeRepository; //(Private final or just private): Since private methods are inaccessible, they are implicitly final in Java. So adding final specifier to a private method doesn't add any value
+	protected CrimeRepository crimeRepository; //Protected: Methods or data declared as protected can be accessed from within the same class or subclasses of the same packages.
 	
-	public CrimeController (MainRepository<Crime> mainRepository, CrimeRepository crimeRepository) { //Weshalb MainRepository<Crime>? Was hat das mit Crime zu tun un wie hat  das mit dem Konstruktor einen Zusammenhang
+	public CrimeController (MainRepository<Crime> mainRepository, CrimeRepository crimeRepository) { 
 		super(mainRepository); //ATTENTION: Super() is always just below the constructor!
 		this.crimeRepository = crimeRepository;
 	

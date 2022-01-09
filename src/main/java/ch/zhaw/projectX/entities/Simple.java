@@ -21,7 +21,7 @@ public class Simple extends Evidence{
 	}
 	
 	
-	public Simple(int id, String eyewitnessName) {
+	public Simple(int id, String eyewitnessName, String evidenceName) {
 		super();
 		this.id = id;
 		this.eyewitnessName = eyewitnessName;
