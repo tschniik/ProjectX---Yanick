@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import ch.zhaw.projectX.repositories.MainRepository;
 
 @RestController			
-public class MainController<T> {// Weshalb braucht es hier Typ <T>
+public class MainController<T> {
 	
 	@Autowired 
 	protected MainRepository<T> mainRepository; //Protected: Methods or data declared as protected can be accessed from within the same class or subclasses of the same packages.
@@ -52,7 +52,7 @@ public class MainController<T> {// Weshalb braucht es hier Typ <T>
 	return new ResponseEntity<>(this.mainRepository.save(newEntity), HttpStatus.OK);
 	}
 	
-	//Allenfalls weglassen da keine Updates im Frontend?
+
 	@PutMapping("{id}")
 	public ResponseEntity<T> update(@PathVariable("id") long id, T newEntity){ 
 		  if (this.mainRepository.existsById(id)) { //findById() returns object, which you are searching for, existsById() returns true/false whether or not entity exists in repository

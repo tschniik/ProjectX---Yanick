@@ -1,7 +1,6 @@
 package ch.zhaw.projectX.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import ch.zhaw.projectX.entities.Evidence;
@@ -9,7 +8,6 @@ import ch.zhaw.projectX.repositories.EvidenceRepository;
 import ch.zhaw.projectX.repositories.MainRepository;
 
 @RestController
-@RequestMapping(value = "/evidence")
 public class EvidenceController<T extends Evidence> extends MainController<T>{
 
 	@Autowired

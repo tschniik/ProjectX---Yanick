@@ -6,7 +6,7 @@ import org.springframework.data.repository.NoRepositoryBean;
 
 import ch.zhaw.projectX.entities.Evidence;
 
-@NoRepositoryBean
+
 public interface EvidenceRepository<T extends Evidence> extends MainRepository<Evidence>{
 
 	@Query

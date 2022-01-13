@@ -8,7 +8,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
-
 @Entity
 public class Investigation {
 	
@@ -31,24 +30,23 @@ public class Investigation {
 	private Crime crime;
 
 	
-	@ManyToOne //One investigation of many points on evidence
-	@JoinColumn(name = "evidence_id")  //The annotation @JoinColumn indicates that this entity is the owner of the relationship (that is: the corresponding table has a column with a foreign key to the referenced table)
-	private Evidence evidence;
+	@ManyToOne //One investigation of many points on complex
+	@JoinColumn(name = "complex_id")  //The annotation @JoinColumn indicates that this entity is the owner of the relationship (that is: the corresponding table has a column with a foreign key to the referenced table)
+	private Complex complex; //Complex because since Mapped superclass is not visible in DB there's a direct connection between investigation & complex
 	
 	
 	public Investigation() {
-		
 	}
 
 	public Investigation(int id, String crimeCommissioner, String policeDepartment, String investigationStart,
-			Crime crime, Evidence evidence) {
+			Crime crime, Complex complex) {
 		super();
 		this.id = id;
 		this.CrimeCommissioner = crimeCommissioner;
 		this.PoliceDepartment = policeDepartment;
 		this.InvestigationStart = investigationStart;
 		this.crime = crime;
-		this.evidence = evidence;
+		this.complex = complex;
 	}
 
 	public int getId() {
@@ -91,12 +89,12 @@ public class Investigation {
 		this.crime = crime;
 	}
 
-	public Evidence getEvidence() {
-		return evidence;
+	public Complex getComplex() {
+		return complex;
 	}
 
-	public void setEvidence(Evidence evidence) {
-		this.evidence = evidence;
+	public void setComplex(Complex complex) {
+		this.complex = complex;
 	}
 	
 	

@@ -9,40 +9,27 @@ import javax.persistence.Id;
 @Entity
 public class Simple extends Evidence{   
 
-	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id", nullable = false)
-	private int id;
 	
-	@Column(name = "eyewitness_name")
-	private String eyewitnessName;
+	@Column(name = "type")
+	private String type;
 
+	
 	public Simple() {
-		
 	}
 	
 	
-	public Simple(int id, String eyewitnessName, String evidenceName) {
-		super();
-		this.id = id;
-		this.eyewitnessName = eyewitnessName;
+	public Simple(int id, String evidenceName, String type, int id_complex) {
+		super(id, evidenceName, id_complex);
+		this.type = type;
 	}
 
 
-
-	public int getId() {
-		return id;
+	public String getType() {
+		return type;
 	}
 
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public String getEyewitnessName() {
-		return eyewitnessName;
-	}
-
-	public void setEyewitnessName(String eyewitnessName) {
-		this.eyewitnessName = eyewitnessName;
+	public void setType(String type) {
+		this.type = type;
 	}
 	
 	

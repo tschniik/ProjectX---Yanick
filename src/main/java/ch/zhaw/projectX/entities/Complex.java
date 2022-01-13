@@ -11,47 +11,25 @@ import javax.persistence.Id;
 @Entity
 public class Complex extends Evidence{ 
 
-	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id", nullable = false)
-	private int id;
 	
-	@Column(name = "dna_found")
-	private String DnaFound;
+	@Column(name = "date")
+	private String date;
 	
-	private List<Evidence> evidence;
 	
 	public Complex() {
 	}
 
-	public Complex(int id, String dnaFound, List<Evidence> evidence) {
-		super();
-		this.id = id;
-		this.DnaFound = dnaFound;
-		this.evidence = evidence;
+	public Complex(int id, String date, String evidenceName, int id_complex) {
+		super(id, evidenceName, id_complex);
+		this.date = date;
 	}
 
-	public int getId() {
-		return id;
+	public String getDate() {
+		return date;
 	}
 
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public String getDnaFound() {
-		return DnaFound;
-	}
-
-	public void setDnaFound(String dnaFound) {
-		DnaFound = dnaFound;
-	}
-
-	public List<Evidence> getEvidence() {
-		return evidence;
-	}
-
-	public void setEvidence(List<Evidence> evidence) {
-		this.evidence = evidence;
+	public void setDnaFound(String date) {
+		this.date = date;
 	}
 
 		

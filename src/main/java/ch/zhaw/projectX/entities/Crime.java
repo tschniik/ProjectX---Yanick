@@ -34,17 +34,14 @@ public class Crime {
 	@Column(name = "crime_scene_place")
 	private String crimeScenePlace;
 	
-	private List<Investigation> investigation;
 	
 	
 	public Crime(){
-		
 	}
 
 
 	public Crime(int id, String crimeName, String crimeWeapon, String crimeSceneStreetName,
-			String crimeSceneStreetNumber, String crimeSceneZip, String crimeScenePlace,
-			List<Investigation> investigation) {
+			String crimeSceneStreetNumber, String crimeSceneZip, String crimeScenePlace) {
 		super();
 		this.id = id;
 		this.crimeName = crimeName;
@@ -53,7 +50,6 @@ public class Crime {
 		this.crimeSceneStreetNumber = crimeSceneStreetNumber;
 		this.crimeSceneZip = crimeSceneZip;
 		this.crimeScenePlace = crimeScenePlace;
-		this.investigation = investigation;
 	}
 
 
@@ -126,15 +122,6 @@ public class Crime {
 		this.crimeScenePlace = crimeScenePlace;
 	}
 
-
-	public List<Investigation> getInvestigation() {
-		return investigation;
-	}
-
-
-	public void setInvestigation(List<Investigation> investigation) {
-		this.investigation = investigation;
-	}
 
 }
 

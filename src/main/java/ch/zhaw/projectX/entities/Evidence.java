@@ -24,21 +24,20 @@ public class Evidence {
 	
 	@ManyToOne  //One evidence of many points on complex
 	@JoinColumn(name = "complex_id")  //The annotation @JoinColumn indicates that this entity is the owner of the relationship (that is: the corresponding table has a column with a foreign key to the referenced table)
-	private Complex complex;
-
-	private List<Investigation> investigation;
+	private Complex complex; //The annotation @JoinColumn indicates that this entity is the owner of the relationship (that is: the corresponding table has a column with a foreign key to the referenced table)
 	
-	public Evidence() {
-		
+	@ManyToOne //One evidence (simple or complex) of many points on one complex
+	@JoinColumn(name = "id_complex")
+	private int id_complex;
+
+		public Evidence() {
 	}
 
 
-	public Evidence(int id, String evidenceName, Complex complex, List<Investigation> investigation) {
-		super();
+	public Evidence(int id, String evidenceName, int id_complex) {
 		this.id = id;
 		this.evidenceName = evidenceName;
-		this.complex = complex;
-		this.investigation = investigation;
+		this.id_complex = id_complex;
 	}
 
 
@@ -57,21 +56,13 @@ public class Evidence {
 	public void setEvidenceName(String evidenceName) {
 		this.evidenceName = evidenceName;
 	}
-
-	public Complex getComplex() {
-		return complex;
-	}
-
-	public void setComplex(Complex complex) {
-		this.complex = complex;
-	}
 	
-	public List<Investigation> getInvestigation() {
-		return investigation;
+	public int getId_complex() {
+		return id_complex;
 	}
 
-	public void setInvestigation(List<Investigation> investigation) {
-		this.investigation = investigation;
+	public void setId_complex(int id_complex) {
+		this.id_complex = id_complex;
 	}
-	
+
 }

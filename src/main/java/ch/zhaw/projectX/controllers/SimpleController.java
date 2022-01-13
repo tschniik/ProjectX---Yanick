@@ -12,6 +12,7 @@ import ch.zhaw.projectX.repositories.MainRepository;
 public class SimpleController extends EvidenceController<Simple>{
 	
 	public SimpleController(EvidenceRepository<Simple> evidenceRepository, MainRepository<Simple> mainRepository) {
-		super(mainRepository, evidenceRepository);
+		super(mainRepository, evidenceRepository);//ATTENTION: Super() is always just below the constructor!
 	}
+	
 }
