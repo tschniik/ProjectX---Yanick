@@ -7,7 +7,6 @@ import ch.zhaw.projectX.entities.Evidence;
 import ch.zhaw.projectX.repositories.EvidenceRepository;
 import ch.zhaw.projectX.repositories.MainRepository;
 
-@RestController
 public class EvidenceController<T extends Evidence> extends MainController<T>{
 
 	@Autowired

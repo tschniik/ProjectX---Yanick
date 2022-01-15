@@ -15,8 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 import ch.zhaw.projectX.repositories.MainRepository;
-
-@RestController			
+	
 public class MainController<T> {
 	
 	@Autowired 

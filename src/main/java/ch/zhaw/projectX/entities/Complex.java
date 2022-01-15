@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+
 
 @Entity
 public class Complex extends Evidence{ 
@@ -15,12 +17,17 @@ public class Complex extends Evidence{
 	@Column(name = "date")
 	private String date;
 	
+/*	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id", nullable = false)
+	private long id; */
+
+	
 	
 	public Complex() {
 	}
 
-	public Complex(int id, String date, String evidenceName, int id_complex) {
-		super(id, evidenceName, id_complex);
+	public Complex(String date, String evidenceName, long id_complex) {
+		super(evidenceName, id_complex);
 		this.date = date;
 	}
 

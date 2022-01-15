@@ -13,7 +13,7 @@ public class Investigation {
 	
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id", nullable = false)
-	private int id;
+	private long id;
 	
 	@Column(name = "Crime_commissioner")
 	private String CrimeCommissioner;
@@ -31,30 +31,20 @@ public class Investigation {
 
 	
 	@ManyToOne //One investigation of many points on complex
-	@JoinColumn(name = "complex_id")  //The annotation @JoinColumn indicates that this entity is the owner of the relationship (that is: the corresponding table has a column with a foreign key to the referenced table)
-	private Complex complex; //Complex because since Mapped superclass is not visible in DB there's a direct connection between investigation & complex
+	@JoinColumn(name = "evidence_id")  //The annotation @JoinColumn indicates that this entity is the owner of the relationship (that is: the corresponding table has a column with a foreign key to the referenced table)
+	private Evidence evidence; //Complex because since Mapped superclass is not visible in DB there's a direct connection between investigation & complex
 	
 	
 	public Investigation() {
 	}
 
-	public Investigation(int id, String crimeCommissioner, String policeDepartment, String investigationStart,
-			Crime crime, Complex complex) {
+	public Investigation(String crimeCommissioner, String policeDepartment, String investigationStart,
+			Crime crime) {
 		super();
-		this.id = id;
 		this.CrimeCommissioner = crimeCommissioner;
 		this.PoliceDepartment = policeDepartment;
 		this.InvestigationStart = investigationStart;
 		this.crime = crime;
-		this.complex = complex;
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
 	}
 
 	public String getCrimeCommissioner() {
@@ -89,14 +79,6 @@ public class Investigation {
 		this.crime = crime;
 	}
 
-	public Complex getComplex() {
-		return complex;
-	}
-
-	public void setComplex(Complex complex) {
-		this.complex = complex;
-	}
-	
 	
 
 	
