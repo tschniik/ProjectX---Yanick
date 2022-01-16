@@ -13,9 +13,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.MappedSuperclass;
 
-@Entity 
-@Inheritance (strategy = InheritanceType.JOINED)
-//@MappedSuperclass 
+//@Entity 
+//@Inheritance (strategy = InheritanceType.JOINED)
+@MappedSuperclass 
 public class Evidence {
 	
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,14 +24,8 @@ public class Evidence {
 	
 	@Column(name = "evidence_name")
 	private String evidenceName;
-	
-/*	@ManyToOne  //One evidence of many points on complex
-	@JoinColumn(name = "complex_id")  //The annotation @JoinColumn indicates that this entity is the owner of the relationship (that is: the corresponding table has a column with a foreign key to the referenced table)
-	private Complex complex; */
-	
-	
-	
-//	@ManyToOne //One evidence (simple or complex) of many points on one complex
+		
+
 	@JoinColumn(name = "id_complex")
 	private long id_complex; 
 

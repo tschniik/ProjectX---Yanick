@@ -31,8 +31,13 @@ public class Investigation {
 
 	
 	@ManyToOne //One investigation of many points on complex
+	@JoinColumn(name = "complex_id")  //The annotation @JoinColumn indicates that this entity is the owner of the relationship (that is: the corresponding table has a column with a foreign key to the referenced table)
+	private Complex complex; //Complex because since Mapped superclass is not visible in DB there's a direct connection between investigation & complex. Herewith I define that every investigation has a complex. 
+	
+/*  @ManyToOne //One investigation of many points on evidence (simple or complex)
 	@JoinColumn(name = "evidence_id")  //The annotation @JoinColumn indicates that this entity is the owner of the relationship (that is: the corresponding table has a column with a foreign key to the referenced table)
-	private Evidence evidence; //Complex because since Mapped superclass is not visible in DB there's a direct connection between investigation & complex
+	private Evidence evidence;
+	*/
 	
 	
 	public Investigation() {

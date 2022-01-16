@@ -26,15 +26,21 @@ public class MainController<T> {
 		this.mainRepository = mainRepository;
 	}
 	
-	@GetMapping("/all")
-	public ResponseEntity<List<T>> findAll(){
+/*	@GetMapping("/all")
+	public ResponseEntity<List<T>> readAll(){
 		List<T> result = this.mainRepository.findAll();
 			
 		if (result != null && !result.isEmpty()) {
-			return new ResponseEntity<List<T>>(result, HttpStatus.OK);}
+			return new ResponseEntity<>(result, HttpStatus.OK);}
 		else {
-			return new ResponseEntity<List<T>>(HttpStatus.NOT_FOUND);}
-	}
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);}
+	} 
+	Mein Versuch mit Response Entity als Variable */
+	
+	 @GetMapping(value = "/all")
+	    public ResponseEntity<List<T>> readAll() {
+	        return new ResponseEntity<>(this.mainRepository.findAll(), HttpStatus.OK);
+	    }
 
 	@GetMapping("/{id}")
 	public ResponseEntity<T> findById(@PathVariable("id") long id) {  //long id is input variable. @PathVariable states that the input variable with the name id is the one from the URL
