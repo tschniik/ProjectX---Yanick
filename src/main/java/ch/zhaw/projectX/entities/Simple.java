@@ -2,15 +2,10 @@ package ch.zhaw.projectX.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+
 
 @Entity
-public class Simple extends Evidence{   
-
+public class Simple extends Evidence{   //Because of extends we inherit the attributes "evidenceName", "parentComplex" and an "id"
 	
 	@Column(name = "type")
 	private String type;
@@ -19,8 +14,8 @@ public class Simple extends Evidence{
 	}
 	
 	
-	public Simple(String evidenceName, String type, long parent_complex) {
-		super(evidenceName, parent_complex);
+	public Simple(String evidenceName, String type, Complex parent_complex) {
+		super(evidenceName, parent_complex); //To call the parent constructor we need to include the instances of the extended instance in the super-constructor 
 		this.type = type;
 	}
 

@@ -1,9 +1,5 @@
 package ch.zhaw.projectX.repositories;
 
-import java.util.List;
-
-import org.springframework.data.jpa.repository.Query;
-
 import ch.zhaw.projectX.entities.Crime;
 
 public interface CrimeRepository extends MainRepository<Crime>{
