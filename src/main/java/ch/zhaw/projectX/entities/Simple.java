@@ -11,9 +11,6 @@ import javax.persistence.ManyToOne;
 @Entity
 public class Simple extends Evidence{   
 
-/*	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id", nullable = false)
-	private long id; */
 	
 	@Column(name = "type")
 	private String type;
@@ -22,8 +19,8 @@ public class Simple extends Evidence{
 	}
 	
 	
-	public Simple(String evidenceName, String type, long id_complex) {
-		super(evidenceName, id_complex);
+	public Simple(String evidenceName, String type, long parent_complex) {
+		super(evidenceName, parent_complex);
 		this.type = type;
 	}
 

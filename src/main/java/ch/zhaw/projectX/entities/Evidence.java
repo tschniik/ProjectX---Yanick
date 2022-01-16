@@ -26,16 +26,16 @@ public class Evidence {
 	private String evidenceName;
 		
 
-	@JoinColumn(name = "id_complex")
-	private long id_complex; 
+	@JoinColumn(name = "parent_complex")
+	private long parent_complex; 
 
 		public Evidence() {
 	}
 
 
-	public Evidence(String evidenceName, long id_complex) {
+	public Evidence(String evidenceName, long parent_complex) {
 		this.evidenceName = evidenceName;
-		this.id_complex = id_complex;
+		this.parent_complex = parent_complex;
 	}
 
 	public String getEvidenceName() {
@@ -46,12 +46,12 @@ public class Evidence {
 		this.evidenceName = evidenceName;
 	}
 	
-	public long getId_complex() {
-		return id_complex;
+	public long getParent_complex() {
+		return parent_complex;
 	}
 
-	public void setId_complex(long id_complex) {
-		this.id_complex = id_complex;
+	public void setParent_complex(long parent_complex) {
+		this.parent_complex = parent_complex;
 	}
 	
 	

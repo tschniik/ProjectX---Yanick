@@ -17,17 +17,11 @@ public class Complex extends Evidence{
 	@Column(name = "date")
 	private String date;
 	
-/*	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id", nullable = false)
-	private long id; */
-
-	
-	
 	public Complex() {
 	}
 
-	public Complex(String date, String evidenceName, long id_complex) {
-		super(evidenceName, id_complex);
+	public Complex(String date, String evidenceName, long parent_complex) {
+		super(evidenceName, parent_complex);
 		this.date = date;
 	}
 
